@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>フレックスボックスとグリッドレイアウト - デモ</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="container">
+    <h1>フレックスボックスとグリッドレイアウト - デモ</h1>
+
+    <!-- フレックスボックスの基本 -->
+    <section class="demo-section">
+      <h2>1. フレックスボックスの基本</h2>
+      <p>display: flex を指定するだけで、子要素が横一列に並び、高さが揃います。</p>
+      <div class="flex-container basic">
+        <div class="flex-item">アイテム1</div>
+        <div class="flex-item">アイテム2</div>
+        <div class="flex-item">アイテム3</div>
+      </div>
+    </section>
+
+    <!-- flex-wrap -->
+    <section class="demo-section">
+      <h2>2. flex-wrap で折り返しを指定</h2>
+      <p>flex-wrap: wrap を指定すると、アイテムが折り返されます。</p>
+      <div class="flex-container wrap">
+        <div class="flex-item">アイテム1</div>
+        <div class="flex-item">アイテム2</div>
+        <div class="flex-item">アイテム3</div>
+        <div class="flex-item">アイテム4</div>
+        <div class="flex-item">アイテム5</div>
+        <div class="flex-item">アイテム6</div>
+      </div>
+    </section>
+
+    <!-- flex プロパティ（割合値） -->
+    <section class="demo-section">
+      <h2>3. flex プロパティ: 割合値</h2>
+      <p>flex プロパティでアイテムの伸び縮みの割合を設定できます。</p>
+      <div class="flex-container">
+        <div class="flex-item flex-1">flex: 1</div>
+        <div class="flex-item flex-1">flex: 1</div>
+        <div class="flex-item flex-2">flex: 2</div>
+      </div>
+    </section>
+
+    <!-- flex プロパティ（最小サイズ） -->
+    <section class="demo-section">
+      <h2>4. flex プロパティ: 最小サイズ</h2>
+      <p>flex に最小サイズを指定することもできます。</p>
+      <div class="flex-container">
+        <div class="flex-item flex-min-1">flex: 1 150px</div>
+        <div class="flex-item flex-min-1">flex: 1 150px</div>
+        <div class="flex-item flex-min-2">flex: 2 150px</div>
+      </div>
+    </section>
+
+    <!-- justify-content -->
+    <section class="demo-section">
+      <h2>5. justify-content: 水平方向の配置</h2>
+      <div class="demo-grid">
+        <div>
+          <h3>flex-start（左寄せ）</h3>
+          <div class="flex-container justify-start">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        <div>
+          <h3>flex-end（右寄せ）</h3>
+          <div class="flex-container justify-end">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        <div>
+          <h3>center（中央寄せ）</h3>
+          <div class="flex-container justify-center">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        <div>
+          <h3>space-between（両端配置）</h3>
+          <div class="flex-container justify-between">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        <div>
+          <h3>space-around（均等スペース）</h3>
+          <div class="flex-container justify-around">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- align-items -->
+    <section class="demo-section">
+      <h2>6. align-items: 垂直方向の配置</h2>
+      <div class="demo-grid">
+        <div>
+          <h3>stretch（高さを揃える）</h3>
+          <div class="flex-container align-stretch">
+            <div class="flex-item">1</div>
+            <div class="flex-item tall">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        <div>
+          <h3>flex-start（上寄せ）</h3>
+          <div class="flex-container align-start">
+            <div class="flex-item">1</div>
+            <div class="flex-item tall">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        <div>
+          <h3>flex-end（下寄せ）</h3>
+          <div class="flex-container align-end">
+            <div class="flex-item">1</div>
+            <div class="flex-item tall">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        <div>
+          <h3>center（上下中央）</h3>
+          <div class="flex-container align-center">
+            <div class="flex-item">1</div>
+            <div class="flex-item tall">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 中央配置の例 -->
+    <section class="demo-section">
+      <h2>7. 中央配置の例</h2>
+      <p>justify-content: center と align-items: center を組み合わせると、アイテムがど真ん中に配置されます。</p>
+      <div class="flex-container center-both">
+        <div class="flex-item">中央に配置</div>
+      </div>
+    </section>
+
+    <!-- flex-direction -->
+    <section class="demo-section">
+      <h2>8. flex-direction: 並ぶ方向を変更</h2>
+      <div class="demo-grid">
+        <div>
+          <h3>row（横方向・既定値）</h3>
+          <div class="flex-container direction-row">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        <div>
+          <h3>column（縦方向）</h3>
+          <div class="flex-container direction-column">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- グリッドレイアウトの基本 -->
+    <section class="demo-section">
+      <h2>9. グリッドレイアウトの基本</h2>
+      <p>display: grid と grid-template-columns で列を定義します。</p>
+      <div class="grid-container basic-grid">
+        <button class="grid-item">1</button>
+        <button class="grid-item">2</button>
+        <button class="grid-item">3</button>
+        <button class="grid-item">4</button>
+      </div>
+    </section>
+
+    <!-- fr 単位 -->
+    <section class="demo-section">
+      <h2>10. fr 単位を使った柔軟なグリッド</h2>
+      <div class="demo-grid">
+        <div>
+          <h3>1fr 1fr 1fr（3等分）</h3>
+          <div class="grid-container fr-equal">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+          </div>
+        </div>
+        <div>
+          <h3>2fr 1fr 1fr（2:1:1の比率）</h3>
+          <div class="grid-container fr-ratio">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- repeat() -->
+    <section class="demo-section">
+      <h2>11. repeat() で繰り返し指定</h2>
+      <p>repeat(3, 1fr) は 1fr 1fr 1fr と同じ意味です。</p>
+      <div class="grid-container repeat-grid">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+      </div>
+    </section>
+
+    <!-- gap -->
+    <section class="demo-section">
+      <h2>12. gap でトラック間隔を指定</h2>
+      <p>gap プロパティで行と列の間隔を指定できます。</p>
+      <div class="grid-container gap-grid">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
