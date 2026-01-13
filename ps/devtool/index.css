@@ -1,0 +1,438 @@
+/* リセットと基本スタイル */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #4a90e2;
+}
+
+header h1 {
+  color: #4a90e2;
+  margin-bottom: 10px;
+}
+
+header p {
+  color: #666;
+}
+
+.section {
+  margin-bottom: 50px;
+  padding: 20px;
+  background-color: #fafafa;
+  border-radius: 6px;
+  border-left: 4px solid #4a90e2;
+}
+
+.section h2 {
+  color: #4a90e2;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
+
+.section h3 {
+  color: #555;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.section p {
+  margin-bottom: 15px;
+  color: #666;
+}
+
+/* 1. ブロック要素とインライン要素 */
+.block-example {
+  background-color: #e8f4f8;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.block-box {
+  background-color: #4a90e2;
+  color: white;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 4px;
+}
+
+.inline-example {
+  background-color: #e8f4f8;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.inline-box {
+  background-color: #e74c3c;
+  color: white;
+  padding: 5px 10px;
+  margin: 0 5px;
+  border-radius: 4px;
+}
+
+/* 2. マージンとパディング */
+.margin-example {
+  background-color: #fff3cd;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.margin-box {
+  background-color: #ffc107;
+  color: #333;
+  padding: 15px;
+  margin: 20px;
+  border: 2px solid #ff9800;
+}
+
+.padding-example {
+  background-color: #d1ecf1;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.padding-box {
+  background-color: #17a2b8;
+  color: white;
+  padding: 15px;
+  margin: 0;
+  border: 2px solid #138496;
+}
+
+.combined-example {
+  background-color: #d4edda;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.combined-box {
+  background-color: #28a745;
+  color: white;
+  padding: 15px;
+  margin: 20px;
+  border: 2px solid #1e7e34;
+}
+
+/* 3. マージンの設定方法 */
+.box {
+  background-color: #6c757d;
+  color: white;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.margin-all {
+  margin: 20px;
+}
+
+.margin-vertical-horizontal {
+  margin: 10px 30px;
+}
+
+.margin-clockwise {
+  margin: 10px 20px 30px 40px;
+}
+
+.margin-individual {
+  margin-top: 10px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  margin-left: 40px;
+}
+
+.margin-auto {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+/* 4. マージンの相殺 */
+.collapse-example {
+  background-color: #f8d7da;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.collapse-box1 {
+  background-color: #dc3545;
+  color: white;
+  padding: 15px;
+  margin-bottom: 30px;
+  border: 2px solid #c82333;
+}
+
+.collapse-box2 {
+  background-color: #dc3545;
+  color: white;
+  padding: 15px;
+  margin-top: 20px;
+  border: 2px solid #c82333;
+}
+
+.horizontal-margin-example {
+  background-color: #f8d7da;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 0;
+}
+
+.horizontal-box1 {
+  background-color: #dc3545;
+  color: white;
+  padding: 15px;
+  margin-right: 20px;
+  border: 2px solid #c82333;
+}
+
+.horizontal-box2 {
+  background-color: #dc3545;
+  color: white;
+  padding: 15px;
+  margin-left: 30px;
+  border: 2px solid #c82333;
+}
+
+.note {
+  margin-top: 10px;
+  font-style: italic;
+  color: #721c24;
+  font-size: 0.9em;
+}
+
+/* 5. パディングの設定方法 */
+.padding-all {
+  padding: 20px;
+}
+
+.padding-vertical-horizontal {
+  padding: 10px 30px;
+}
+
+.padding-clockwise {
+  padding: 10px 20px 30px 40px;
+}
+
+.padding-collapse-example {
+  background-color: #d1ecf1;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.padding-collapse-box1 {
+  background-color: #17a2b8;
+  color: white;
+  padding-bottom: 30px;
+  margin-bottom: 0;
+  border: 2px solid #138496;
+}
+
+.padding-collapse-box2 {
+  background-color: #17a2b8;
+  color: white;
+  padding-top: 20px;
+  margin-top: 0;
+  border: 2px solid #138496;
+}
+
+/* 6. display プロパティ */
+.display-example {
+  background-color: #e2e3e5;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.display-block {
+  display: block;
+  background-color: #6f42c1;
+  color: white;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 4px;
+}
+
+.display-inline {
+  display: inline;
+  background-color: #6f42c1;
+  color: white;
+  padding: 5px 10px;
+  margin: 0 5px;
+  border-radius: 4px;
+}
+
+.display-inline-block {
+  display: inline-block;
+  background-color: #6f42c1;
+  color: white;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 4px;
+  width: 200px;
+}
+
+.display-none {
+  display: none;
+}
+
+/* 7. スタイルの優先順位 */
+.priority-example {
+  background-color: #fff3cd;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+/* 詳細度が低いスタイル（クラス指定のみ） */
+.priority-low {
+  background-color: #ffc107;
+  color: #333;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 2px solid #ff9800;
+}
+
+/* 詳細度が高いスタイル（ID指定 + クラス指定） */
+#priority-high-id.priority-high {
+  background-color: #28a745;
+  color: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 2px solid #1e7e34;
+}
+
+/* 実際にはクラスだけで詳細度を上げるため、後から定義 */
+.priority-low.priority-high {
+  background-color: #28a745;
+  color: white;
+  border: 2px solid #1e7e34;
+}
+
+.order-example {
+  background-color: #d1ecf1;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+/* 最初に定義されたスタイル */
+.order-box {
+  background-color: #17a2b8;
+  color: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 2px solid #138496;
+}
+
+.order-first {
+  background-color: #17a2b8;
+}
+
+/* 後に定義されたスタイル（同じ詳細度なので、こちらが優先） */
+.order-second {
+  background-color: #dc3545;
+  border: 2px solid #c82333;
+}
+
+.important-example {
+  background-color: #f8d7da;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.important-box {
+  background-color: #dc3545;
+  color: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 2px solid #c82333;
+}
+
+.important-normal {
+  background-color: #6c757d;
+  border: 2px solid #5a6268;
+}
+
+/* !important が付いたスタイル（最優先） */
+.important-force {
+  background-color: #ffc107 !important;
+  color: #333 !important;
+  border: 2px solid #ff9800 !important;
+}
+
+.inline-style-example {
+  background-color: #d4edda;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.inline-style-box {
+  background-color: #28a745;
+  color: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 2px solid #1e7e34;
+}
+
+.inheritance-example {
+  background-color: #e2e3e5;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+/* 親要素のスタイル（子要素に継承される） */
+.inheritance-parent {
+  color: #6c757d;
+  font-size: 16px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border: 2px solid #dee2e6;
+}
+
+/* 直接指定されたスタイル（継承より優先） */
+.inheritance-direct {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+footer {
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 2px solid #4a90e2;
+  text-align: center;
+  color: #666;
+}

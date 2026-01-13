@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSSレイアウトの基本 - 総復習</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>CSSによるレイアウトの基本 - 総復習</h1>
+      <p>このページでは、CSSレイアウトの基本概念を復習できます。ブラウザの開発者ツールを使って、各要素のスタイルを確認してみましょう。</p>
+    </header>
+
+    <section class="section">
+      <h2>1. ブロックレベル要素とインラインレベル要素</h2>
+      
+      <h3>ブロックレベル要素</h3>
+      <p>ブロックレベル要素は、常に新しい行から始まり、横幅は親要素いっぱいに広がります。</p>
+      <div class="block-example">
+        <div class="block-box">1つ目のブロック要素</div>
+        <div class="block-box">2つ目のブロック要素</div>
+        <div class="block-box">3つ目のブロック要素</div>
+      </div>
+
+      <h3>インラインレベル要素</h3>
+      <p>インラインレベル要素は、改行されず横に並び、コンテンツの幅だけを占めます。</p>
+      <div class="inline-example">
+        <span class="inline-box">インライン要素1</span>
+        <span class="inline-box">インライン要素2</span>
+        <span class="inline-box">インライン要素3</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>2. マージンとパディング</h2>
+      
+      <h3>マージン（外側の余白）</h3>
+      <div class="margin-example">
+        <div class="box margin-box">マージン: 20px</div>
+      </div>
+
+      <h3>パディング（内側の余白）</h3>
+      <div class="padding-example">
+        <div class="box padding-box">パディング: 15px</div>
+      </div>
+
+      <h3>マージンとパディングの組み合わせ</h3>
+      <div class="combined-example">
+        <div class="box combined-box">
+          マージン: 20px<br>
+          パディング: 15px<br>
+          ボーダー: 2px solid
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>3. マージンの設定方法</h2>
+      
+      <h3>4辺すべて同じ値</h3>
+      <div class="box margin-all">margin: 20px;</div>
+
+      <h3>上下 | 左右</h3>
+      <div class="box margin-vertical-horizontal">margin: 10px 30px;</div>
+
+      <h3>上 | 右 | 下 | 左（時計回り）</h3>
+      <div class="box margin-clockwise">margin: 10px 20px 30px 40px;</div>
+
+      <h3>個別指定</h3>
+      <div class="box margin-individual">
+        margin-top: 10px;<br>
+        margin-right: 20px;<br>
+        margin-bottom: 30px;<br>
+        margin-left: 40px;
+      </div>
+
+      <h3>左右中央寄せ（margin: auto）</h3>
+      <div class="box margin-auto">width: 80%; margin: auto;</div>
+    </section>
+
+    <section class="section">
+      <h2>4. マージンの相殺</h2>
+      <p>隣接する垂直方向のマージンは、大きい方の値が採用されます（相殺）。</p>
+      
+      <div class="collapse-example">
+        <div class="box collapse-box1">margin-bottom: 30px</div>
+        <div class="box collapse-box2">margin-top: 20px</div>
+        <p class="note">→ 間隔は 50px ではなく 30px（大きい方）になります</p>
+      </div>
+
+      <h3>水平方向のマージンは相殺されない</h3>
+      <div class="horizontal-margin-example">
+        <div class="box horizontal-box1">margin-right: 20px</div>
+        <div class="box horizontal-box2">margin-left: 30px</div>
+        <p class="note">→ 間隔は 50px（20px + 30px）になります</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>5. パディングの設定方法</h2>
+      
+      <h3>4辺すべて同じ値</h3>
+      <div class="box padding-all">padding: 20px;</div>
+
+      <h3>上下 | 左右</h3>
+      <div class="box padding-vertical-horizontal">padding: 10px 30px;</div>
+
+      <h3>上 | 右 | 下 | 左（時計回り）</h3>
+      <div class="box padding-clockwise">padding: 10px 20px 30px 40px;</div>
+
+      <h3>パディングは相殺されない</h3>
+      <div class="padding-collapse-example">
+        <div class="box padding-collapse-box1">padding-bottom: 30px</div>
+        <div class="box padding-collapse-box2">padding-top: 20px</div>
+        <p class="note">→ 間隔は 50px（30px + 20px）になります</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>6. display プロパティ</h2>
+      
+      <h3>display: block（インライン要素をブロック要素に）</h3>
+      <div class="display-example">
+        <span class="display-block">display: block の span要素1</span>
+        <span class="display-block">display: block の span要素2</span>
+      </div>
+
+      <h3>display: inline（ブロック要素をインライン要素に）</h3>
+      <div class="display-example">
+        <div class="display-inline">display: inline の div要素1</div>
+        <div class="display-inline">display: inline の div要素2</div>
+      </div>
+
+      <h3>display: inline-block</h3>
+      <div class="display-example">
+        <div class="display-inline-block">inline-block要素1</div>
+        <div class="display-inline-block">inline-block要素2</div>
+        <div class="display-inline-block">inline-block要素3</div>
+      </div>
+
+      <h3>display: none（非表示）</h3>
+      <div class="display-example">
+        <div class="box">表示される要素</div>
+        <div class="box display-none">display: none の要素（非表示）</div>
+        <div class="box">表示される要素</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>7. スタイルの優先順位（複数のスタイルが適用されるケース）</h2>
+      
+      <h3>ケース1: 詳細度による優先</h3>
+      <p>詳細度が高いスタイルが優先されます。</p>
+      <div class="priority-example">
+        <p class="priority-low">クラス指定のみ（詳細度: 0,1,0）</p>
+        <p class="priority-low priority-high">クラス指定 + ID指定（詳細度: 1,1,0）→ こちらが優先</p>
+      </div>
+
+      <h3>ケース2: 後から書かれたスタイルが優先</h3>
+      <p>同じ詳細度の場合、後に書かれたスタイルが優先されます。</p>
+      <div class="order-example">
+        <div class="order-box order-first">最初に定義されたスタイル</div>
+        <div class="order-box order-second">後に定義されたスタイル（優先）</div>
+      </div>
+
+      <h3>ケース3: !important による優先</h3>
+      <p>!important が付いたスタイルが最優先されます。</p>
+      <div class="important-example">
+        <div class="important-box important-normal">通常のスタイル</div>
+        <div class="important-box important-force">!important が付いたスタイル（最優先）</div>
+      </div>
+
+      <h3>ケース4: インラインスタイル vs クラス</h3>
+      <p>インラインスタイルは、クラス指定よりも優先されます。</p>
+      <div class="inline-style-example">
+        <div class="inline-style-box">クラス指定のみ</div>
+        <div class="inline-style-box" style="background-color: orange; color: white;">
+          インラインスタイル（優先）
+        </div>
+      </div>
+
+      <h3>ケース5: 継承と直接指定</h3>
+      <p>直接指定されたスタイルが、継承されたスタイルより優先されます。</p>
+      <div class="inheritance-example">
+        <div class="inheritance-parent">
+          <p>親要素から継承された色</p>
+          <p class="inheritance-direct">直接指定された色（優先）</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>開発者ツール（F12）を開いて、各要素のスタイルを確認してみましょう！</p>
+    </footer>
+  </div>
+</body>
+</html>
