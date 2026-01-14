@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>タイポエラーの例 - JavaScriptデバッグ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .error-info {
+      background-color: #ffe6e6;
+      border-left: 4px solid #ff0000;
+      padding: 15px;
+      margin: 20px 0;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>開発者ツールで例外を確認する例</h1>
+  <p>このページでは、<code>addEventListener</code> のスペルミスによる例外の例を確認できます。</p>
+  
+  <div class="error-info">
+    <strong>エラーの内容:</strong> <code>addeventlistener</code> は正しくは <code>addEventListener</code> です（大文字小文字の区別）。
+    <br><strong>確認方法:</strong> 開発者ツール（F12）のコンソールタブを開いてエラーメッセージを確認してください。
+    <br>エラーメッセージ: <code>Uncaught TypeError: button.addeventlistener is not a function</code>
+  </div>
+
+  <button id="myBtn">クリック</button>
+
+  <script src="04-typo-error.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>論理エラーの例 - JavaScriptデバッグ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .error-info {
+      background-color: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 15px;
+      margin: 20px 0;
+    }
+    .result {
+      background-color: #f4f4f4;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>論理エラーの例</h1>
+  <p>このページでは、税込価格の計算で発生する論理エラーの例を確認できます。</p>
+  
+  <div class="error-info">
+    <strong>エラーの内容:</strong> 税込価格を計算する際に、掛け算ではなく足し算をしてしまっています。
+    <br><strong>確認方法:</strong> 開発者ツール（F12）のコンソールタブを開いて、計算結果を確認してください。
+  </div>
+
+  <div class="result">
+    <p>価格: <span id="price">1000</span>円</p>
+    <p>税率: <span id="taxRate">10</span>%</p>
+    <p>間違った計算結果: <span id="wrongTotal">-</span>円</p>
+    <p>正しい計算結果: <span id="correctTotal">-</span>円</p>
+  </div>
+
+  <button onclick="calculateWrong()">間違った計算を実行</button>
+  <button onclick="calculateCorrect()">正しい計算を実行</button>
+
+  <script src="03-logic-error.js"></script>
+</body>
+</html>

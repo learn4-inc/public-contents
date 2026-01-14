@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>構文エラーの例 - JavaScriptデバッグ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .error-info {
+      background-color: #ffe6e6;
+      border-left: 4px solid #ff0000;
+      padding: 15px;
+      margin: 20px 0;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <h1>構文エラーの例</h1>
+  <p>このページでは、閉じ括弧が足りない構文エラーの例を確認できます。</p>
+  
+  <div class="error-info">
+    <strong>エラーの内容:</strong> 関数の定義で閉じ括弧が足りません。
+    <br><strong>確認方法:</strong> 開発者ツール（F12）のコンソールタブを開いてエラーメッセージを確認してください。
+  </div>
+
+  <button onclick="sayHello()">こんにちは</button>
+
+  <script src="01-syntax-error.js"></script>
+</body>
+</html>

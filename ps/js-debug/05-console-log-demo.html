@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>console.logの利用例 - JavaScriptデバッグ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .info {
+      background-color: #e7f3ff;
+      border-left: 4px solid #2196F3;
+      padding: 15px;
+      margin: 20px 0;
+    }
+    .result {
+      background-color: #f4f4f4;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>論理エラーを調査する: console.log の利用</h1>
+  <p>このページでは、<code>console.log()</code> を使って変数の値を確認する方法を学びます。</p>
+  
+  <div class="info">
+    <strong>使い方:</strong> ボタンをクリックしてから、開発者ツール（F12）のコンソールタブを開いて、変数の値を確認してください。
+  </div>
+
+  <div class="result">
+    <p>価格: <span id="price">1000</span>円</p>
+    <p>税率: <span id="taxRate">10</span>%</p>
+    <p>計算結果: <span id="total">-</span>円</p>
+  </div>
+
+  <button onclick="calculate()">計算を実行（コンソールを確認）</button>
+
+  <script src="05-console-log-demo.js"></script>
+</body>
+</html>

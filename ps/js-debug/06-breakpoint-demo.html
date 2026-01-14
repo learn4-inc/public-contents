@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ブレークポイントの例 - JavaScriptデバッグ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .info {
+      background-color: #e7f3ff;
+      border-left: 4px solid #2196F3;
+      padding: 15px;
+      margin: 20px 0;
+    }
+    .result {
+      background-color: #f4f4f4;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .instructions {
+      background-color: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 15px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>ブレークポイントとコンソールの併用</h1>
+  <p>このページでは、ブレークポイントを使ってコードの実行を一時停止し、変数の値を確認する方法を学びます。</p>
+  
+  <div class="instructions">
+    <strong>ブレークポイントの設定方法:</strong>
+    <ol>
+      <li>開発者ツールを開く（F12）</li>
+      <li><strong>Sources</strong>（ソース）タブをクリック</li>
+      <li>左側のファイル一覧から <code>06-breakpoint-demo.js</code> を選択</li>
+      <li>調査したい行（例: 8行目）の<strong>行番号をクリック</strong>すると、青い印がつきます</li>
+      <li>ボタンをクリックすると、その行で実行が一時停止します</li>
+      <li>一時停止中に、右側の「Scope」パネルで変数の値を確認できます</li>
+      <li>一時停止中に、コンソールで直接コードを実行することもできます</li>
+    </ol>
+  </div>
+
+  <div class="info">
+    <strong>試してみましょう:</strong> ブレークポイントで一時停止中に、コンソールで以下のコードを実行してみてください：
+    <pre>price
+taxRate
+price * taxRate
+price + price * taxRate</pre>
+  </div>
+
+  <div class="result">
+    <p>価格: <span id="price">1000</span>円</p>
+    <p>税率: <span id="taxRate">10</span>%</p>
+    <p>計算結果: <span id="total">-</span>円</p>
+  </div>
+
+  <button onclick="calculate()">計算を実行</button>
+
+  <script src="06-breakpoint-demo.js"></script>
+</body>
+</html>

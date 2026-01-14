@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>デバッグのコツ - JavaScriptデバッグ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .info {
+      background-color: #e7f3ff;
+      border-left: 4px solid #2196F3;
+      padding: 15px;
+      margin: 20px 0;
+    }
+    .form-group {
+      margin: 20px 0;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #result {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #f4f4f4;
+      border-radius: 5px;
+      min-height: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>デバッグのコツ</h1>
+  <p>このページでは、「何が予想通りに動いているか」「何が動いていないか」を一つ一つ確認する方法を学びます。</p>
+  
+  <div class="info">
+    <strong>デバッグのポイント:</strong>
+    <ul>
+      <li>ボタンは正しく取得できているか？</li>
+      <li>イベントリスナーは正しく設定されているか？</li>
+      <li>入力フィールドは正しく取得できているか？</li>
+      <li>結果を表示する要素は正しく取得できているか？</li>
+    </ul>
+    <p>開発者ツールのコンソールやブレークポイントを使って、一つ一つ確認してみましょう。</p>
+  </div>
+
+  <div class="form-group">
+    <label for="myInput">メッセージを入力してください:</label>
+    <input type="text" id="myInput" placeholder="ここに入力">
+  </div>
+
+  <button id="myButton">送信</button>
+
+  <div id="result"></div>
+
+  <script src="07-debug-tips.js"></script>
+</body>
+</html>
