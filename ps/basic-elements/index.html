@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMLの基本的な要素 - コード例集</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        section {
+            background-color: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        /* h1 {
+            color: #333;
+            border-bottom: 3px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #555;
+            margin-top: 30px;
+            border-left: 4px solid #4CAF50;
+            padding-left: 10px;
+        }
+        h3 {
+            color: #777;
+            margin-top: 20px;
+        } */
+        .example {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .result {
+            background-color: #e8f5e9;
+            border-left: 4px solid #4CAF50;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .good-example {
+            background-color: #e8f5e9;
+            border-left: 4px solid #4CAF50;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .bad-example {
+            background-color: #ffebee;
+            border-left: 4px solid #f44336;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .table-styled {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 15px 0;
+        }
+        .table-styled th, .table-styled td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .table-styled th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .table-styled tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            background-color: #fff;
+        }
+        .highlight {
+            background-color: #ffeb3b;
+            padding: 2px 6px;
+            border-radius: 3px;
+        /* }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        } */
+        form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .demo-img {
+            width: 200px;
+            height: 100px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTMLの基本的な要素 - コード例集</h1>
+
+    <!-- 見出し要素 -->
+    <section>
+        <h2>見出し要素 (h1-h6)</h2>
+        (webページ上の表示)
+        <div class="example">
+            <h1>メインタイトル</h1>
+            <h2>セクションの見出し</h2>
+            <h3>サブセクションの見出し</h3>
+            <h4>さらに細かい見出し</h4>
+        </div>
+    </section>
+
+    <!-- 見出しの階層構造 -->
+    <section>
+        <h2>見出しの階層構造</h2>
+        (webページ上の表示)
+        <div class="example">
+            <h1>私のブログ</h1>
+
+            <h2>今週の出来事</h2>
+            <p>今週は忙しい一週間でした。</p>
+
+            <h3>月曜日</h3>
+            <p>会議がありました。</p>
+
+            <h3>水曜日</h3>
+            <p>友人と食事をしました。</p>
+        </div>
+    </section>
+
+    <!-- 段落要素 -->
+    <section>
+        <h2>段落要素 (p)</h2>
+        (webページ上の表示)
+        <div class="example">
+            <p>
+                HTMLは、ウェブページを作成するための言語です。
+                タグを使って文章の構造を表現します。
+            </p>
+
+            <p>
+                CSSと組み合わせることで、見た目を装飾できます。
+                JavaScriptを使えば、動きも付けられます。
+            </p>
+        </div>
+    </section>
+
+    <!-- br要素 -->
+    <section>
+        <h2>br, hr要素</h2>
+        (webページ上の表示)
+        <div class="example">
+            <p>
+                1行目<br>
+                2行目<br>
+                3行目
+            </p>
+        </div>
+        <div class="example">
+            <p>上の段落</p>
+            <hr>
+            <p>下の段落</p>
+        </div>
+    </section>
+
+    <!-- 順序なしリスト -->
+    <section>
+        <h2>順序なしリスト (ul)</h2>
+        (webページ上の表示)
+        <div class="example">
+            <ul>
+                <li>牛乳</li>
+                <li>パン</li>
+                <li>卵</li>
+                <li>りんご</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 順序付きリスト -->
+    <section>
+        <h2>順序付きリスト (ol)</h2>
+        (webページ上の表示)
+        <div class="example">
+            <ol>
+                <li>卵を割ってボウルに入れる</li>
+                <li>牛乳を加えてよく混ぜる</li>
+                <li>フライパンで焼く</li>
+                <li>お皿に盛り付ける</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- リストの入れ子 -->
+    <section>
+        <h2>リストの入れ子</h2>
+        (webページ上の表示)
+        <div class="example">
+            <ul>
+                <li>果物
+                    <ul>
+                        <li>りんご</li>
+                        <li>バナナ</li>
+                    </ul>
+                </li>
+                <li>野菜
+                    <ul>
+                        <li>にんじん</li>
+                        <li>キャベツ</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- リンク要素 -->
+    <section>
+        <h2>リンク要素 (a)</h2>
+        (webページ上の表示)
+        <div class="example">
+            <p>
+                詳しくは<a href="https://example.com/about">こちら</a>をご覧ください。
+            </p>
+        </div>
+    </section>
+
+    <!-- リンクの書き方のポイント -->
+    <section>
+        <h2>リンクの書き方のポイント</h2>
+        (webページ上の表示)
+        <h3>✅ 良い例</h3>
+        <div class="good-example">
+            <a href="https://example.com/guide">初心者ガイドを読む</a>
+        </div>
+        <h3>❌ 悪い例</h3>
+        <div class="bad-example">
+            初心者ガイドは<a href="https://example.com/guide">こちら</a>
+        </div>
+    </section>
+
+    <!-- 同じページ内へのリンク -->
+    <section>
+        <h2>同じページ内へのリンク</h2>
+        (webページ上の表示)
+        <div class="example">
+            <!-- リンク -->
+            <p><a href="#section2">セクション2へ移動</a></p>
+
+            <!-- 中略 -->
+            <p style="margin: 50px 0;">（中略）</p>
+
+            <!-- 移動先 -->
+            <h2 id="section2">セクション2</h2>
+            <p>ここがセクション2の内容です。</p>
+        </div>
+    </section>
+
+    <!-- 画像要素 -->
+    <section>
+        <h2>画像要素 (img)</h2>
+        (webページ上の表示)
+        <div class="example">
+            <img 
+                src="photo.png" 
+                alt="公園で遊ぶ子供たち"
+            >
+        </div>
+    </section>
+
+    <!-- alt属性の重要性 -->
+    <section>
+        <h2>alt属性の重要性</h2>
+        (webページ上の表示)
+        <div class="example">
+            <div class="demo-img">chart.png</div>
+            <p><small>※ 実際の画像ファイルは存在しないため、プレースホルダーを表示しています</small></p>
+            <!-- 実際のコード例 -->
+            <!-- <img src="chart.png" alt="2024年の売上推移グラフ"> -->
+        </div>
+    </section>
+
+    <!-- 画像のサイズ指定 -->
+    <section>
+        <h2>画像のサイズ指定</h2>
+        (webページ上の表示)
+        <div class="example">
+            <div class="demo-img" style="width: 200px; height: 100px;">logo.png</div>
+            <p><small>※ 実際の画像ファイルは存在しないため、プレースホルダーを表示しています</small></p>
+            <!-- 実際のコード例 -->
+            <!-- <img 
+                src="logo.png" 
+                alt="会社のロゴ"
+                width="200"
+                height="100"
+            > -->
+        </div>
+    </section>
+
+    <!-- 表要素の基本 -->
+    <section>
+        <h2>表要素 (table) の基本</h2>
+        (webページ上の表示)
+        <div class="example">
+            <table>
+                <tr>
+                    <th>名前</th>
+                    <th>年齢</th>
+                </tr>
+                <tr>
+                    <td>田中</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td>鈴木</td>
+                    <td>30</td>
+                </tr>
+            </table>
+        </div>
+        <div class="example">
+            <table class="table-styled">
+                <tr>
+                    <th>名前</th>
+                    <th>年齢</th>
+                </tr>
+                <tr>
+                    <td>田中</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td>鈴木</td>
+                    <td>30</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- 表の構成要素 -->
+    <section>
+        <h2>表の構成要素</h2>
+        (webページ上の表示)
+        <table class="table-styled">
+            <tr>
+                <th>要素</th>
+                <th>役割</th>
+                <th>意味</th>
+            </tr>
+            <tr>
+                <td>&lt;table&gt;</td>
+                <td>表全体</td>
+                <td>table（表）</td>
+            </tr>
+            <tr>
+                <td>&lt;tr&gt;</td>
+                <td>行</td>
+                <td>table row（表の行）</td>
+            </tr>
+            <tr>
+                <td>&lt;th&gt;</td>
+                <td>見出しセル</td>
+                <td>table header（表の見出し）</td>
+            </tr>
+            <tr>
+                <td>&lt;td&gt;</td>
+                <td>データセル</td>
+                <td>table data（表のデータ）</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- 表の例 -->
+    <section>
+        <h2>表の例</h2>
+        (webページ上の表示)
+        <div class="example">
+            <table class="table-styled">
+                <tr>
+                    <th>商品名</th>
+                    <th>価格</th>
+                    <th>在庫</th>
+                </tr>
+                <tr>
+                    <td>ノートPC</td>
+                    <td>120,000円</td>
+                    <td>5台</td>
+                </tr>
+                <tr>
+                    <td>マウス</td>
+                    <td>2,500円</td>
+                    <td>20個</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- div要素 -->
+    <section>
+        <h2>div要素</h2>
+        (webページ上の表示)
+        <div class="example">
+            <div>
+                <h3>お知らせ</h3>
+                <p>新商品が入荷しました。</p>
+                <p>セール開催中です。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- div要素の使用例 -->
+    <section>
+        <h2>div要素の使用例</h2>
+        (webページ上の表示)
+        <div class="example">
+            <div class="card">
+                <div class="demo-img" style="width: 150px; height: 150px;">product.jpg</div>
+                <h3>商品名</h3>
+                <p>商品の説明文</p>
+                <p>価格: 1,000円</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- span要素 -->
+    <section>
+        <h2>span要素</h2>
+        (webページ上の表示)
+        <div class="example">
+            <p>
+                本日の特価商品は
+                <span class="highlight">りんご</span>
+                です。
+            </p>
+        </div>
+    </section>
+
+    <!-- divとspanの違い -->
+    <section>
+        <h2>divとspanの違い</h2>
+        (webページ上の表示)
+        <div class="example">
+            <div>ここは</div>
+            <div>別の行になります</div>
+        </div>
+        <div class="example">
+            <span>ここは</span>
+            <span>同じ行に続きます</span>
+        </div>
+    </section>
+
+    <!-- button要素 -->
+    <section>
+        <h2>button要素</h2>
+        (webページ上の表示)
+        <div class="example">
+            <button>送信</button>
+            <button>キャンセル</button>
+            <button>詳細を見る</button>
+        </div>
+    </section>
+
+    <!-- button要素の使用例 -->
+    <section>
+        <h2>button要素の使用例</h2>
+        (webページ上の表示)
+        <div class="example">
+            <form>
+                <p>
+                    <label>お名前: <input type="text"></label>
+                </p>
+                <p>
+                    <label>メッセージ: <textarea></textarea></label>
+                </p>
+                <button type="submit">送信する</button>
+                <button type="reset">リセット</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- input要素 -->
+    <section>
+        <h2>input要素</h2>
+        (webページ上の表示)
+        <div class="example">
+          <label>名前:
+            <input type="text" placeholder="お名前を入力">
+          </label><br>
+          <label>生年月日:
+            <input type="date">
+          </label><br>
+          <label>ファイルを選択:
+            <input type="file">
+          </label><br>
+          <label>
+            <input type="checkbox"> 利用規約に同意する
+          </label>
+                  </div>
+    </section>
+
+    <!-- まとめ -->
+    <section>
+        <h2>まとめ</h2>
+        (webページ上の表示)
+        <table class="table-styled">
+            <tr>
+                <th>要素</th>
+                <th>用途</th>
+            </tr>
+            <tr>
+                <td>&lt;h1&gt;-&lt;h6&gt;</td>
+                <td>見出し</td>
+            </tr>
+            <tr>
+                <td>&lt;p&gt;</td>
+                <td>段落</td>
+            </tr>
+            <tr>
+                <td>&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;</td>
+                <td>リスト</td>
+            </tr>
+            <tr>
+                <td>&lt;a&gt;</td>
+                <td>リンク</td>
+            </tr>
+            <tr>
+                <td>&lt;img&gt;</td>
+                <td>画像</td>
+            </tr>
+            <tr>
+                <td>&lt;table&gt;, &lt;tr&gt;, &lt;th&gt;, &lt;td&gt;</td>
+                <td>表</td>
+            </tr>
+            <tr>
+                <td>&lt;div&gt;</td>
+                <td>ブロックのグループ化</td>
+            </tr>
+            <tr>
+                <td>&lt;span&gt;</td>
+                <td>インラインのグループ化</td>
+            </tr>
+            <tr>
+                <td>&lt;button&gt;</td>
+                <td>ボタン</td>
+            </tr>
+        </table>
+    </section>
+
+</body>
+</html>

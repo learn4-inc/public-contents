@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>イベントのバブリングを止める - stopPropagation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    section {
+      margin: 40px 0;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    h2 {
+      color: #333;
+      border-bottom: 2px solid #4CAF50;
+      padding-bottom: 10px;
+    }
+    .example {
+      background-color: #f9f9f9;
+      padding: 15px;
+      margin: 15px 0;
+      border-left: 4px solid #4CAF50;
+    }
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      max-width: 500px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .modal-content p {
+      margin: 0 0 20px 0;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #message {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #e8f5e9;
+      border-radius: 4px;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+    }
+  </style>
+</head>
+<body>
+  <h1>イベントのバブリングを止める</h1>
+
+  <section>
+    <h2>イベントのバブリングを止める (1)</h2>
+    <p>一方、「親要素でイベントを監視しているが、子要素のイベントでそれを実行したくない」場合もあります。<code>event.stopPropagation()</code> を使うと、イベントのバブリングを<strong>止める</strong>ことができます。</p>
+    
+    <div class="example">
+      <p>以下のHTMLがあるとします:</p>
+      <pre><code>&lt;div class="modal-overlay"&gt;
+  &lt;div class="modal-content"&gt;
+    &lt;p&gt;モーダルの内容&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+  </section>
+
+  <section>
+    <h2>イベントのバブリングを止める (2)</h2>
+    <p>オーバーレイをクリックしたら閉じるが、モーダル内をクリックしても閉じないようにする例です。</p>
+    
+    <div class="example">
+      <button onclick="showModal()">モーダルを表示</button>
+      <p id="message"></p>
+    </div>
+
+    <div id="modal-overlay" class="modal-overlay" style="display: none;">
+      <div class="modal-content">
+        <p>モーダルの内容</p>
+        <p>このモーダル内をクリックしても閉じません。</p>
+        <p>モーダルの外側（オーバーレイ）をクリックすると閉じます。</p>
+      </div>
+    </div>
+
+    <script>
+      function showModal() {
+        const overlay = document.querySelector('.modal-overlay');
+        overlay.style.display = 'flex';
+        document.getElementById("message").textContent = "モーダルが表示されました";
+      }
+
+      function handleOverlayClick() {
+        const overlay = document.querySelector('.modal-overlay');
+        overlay.style.display = 'none';
+        document.getElementById("message").textContent = "モーダルが閉じられました（オーバーレイをクリック）";
+      }
+
+      function handleContentClick(event) {
+        event.stopPropagation();
+        document.getElementById("message").textContent = "モーダル内をクリックしました（閉じません）";
+      }
+
+      // オーバーレイをクリックしたら閉じる
+      const overlay = document.querySelector('.modal-overlay');
+      overlay.addEventListener("click", handleOverlayClick);
+      
+      // モーダル内をクリックしても閉じないようにする
+      const content = document.querySelector('.modal-content');
+      content.addEventListener("click", handleContentClick);
+    </script>
+  </section>
+
+  <section>
+    <h2>動作の説明</h2>
+    <ul>
+      <li>「モーダルを表示」ボタンをクリックすると、モーダルが表示されます</li>
+      <li>モーダルの外側（暗い部分）をクリックすると、モーダルが閉じます</li>
+      <li>モーダルの内側（白い部分）をクリックしても、モーダルは閉じません</li>
+      <li>これは、<code>event.stopPropagation()</code> によって、モーダル内のクリックイベントが親要素（オーバーレイ）に伝播しないためです</li>
+    </ul>
+  </section>
+
+</body>
+</html>

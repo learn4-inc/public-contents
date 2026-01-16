@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOMとイベント - 例の集約</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    section {
+      margin: 40px 0;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    h2 {
+      color: #333;
+      border-bottom: 2px solid #4CAF50;
+      padding-bottom: 10px;
+    }
+    h3 {
+      color: #666;
+      margin-top: 20px;
+    }
+    .example {
+      background-color: #f9f9f9;
+      padding: 15px;
+      margin: 15px 0;
+      border-left: 4px solid #4CAF50;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #box {
+      padding: 20px;
+      margin: 10px 0;
+      background-color: #e0e0e0;
+      border: 2px solid #333;
+    }
+    #container {
+      padding: 20px;
+      margin: 10px 0;
+      background-color: #f0f0f0;
+      border: 2px solid #666;
+    }
+    #outer {
+      padding: 30px;
+      margin: 10px 0;
+      background-color: #e8f5e9;
+      border: 2px solid #4CAF50;
+    }
+    #inner {
+      padding: 20px;
+      margin: 10px 0;
+      background-color: #c8e6c9;
+      border: 2px solid #66bb6a;
+    }
+    #list {
+      list-style-type: none;
+      padding: 0;
+    }
+    #list li {
+      padding: 10px;
+      margin: 5px 0;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      cursor: pointer;
+    }
+    #list li:hover {
+      background-color: #f0f0f0;
+    }
+    .item {
+      padding: 5px;
+      margin: 2px;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    a {
+      color: #4CAF50;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>DOMとイベント - 例の集約</h1>
+
+  <!-- DOMとは (2) -->
+  <section>
+    <h2>DOMとは (2)</h2>
+    <p>以下のような HTML があるとします。</p>
+    <div class="example">
+      <div id="content">
+        <h1>タイトル</h1>
+        <p>本文です</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- document.querySelector (1) -->
+  <section>
+    <h2>要素の選択: document.querySelector (1)</h2>
+    <p><code>document.querySelector()</code> は、CSS のセレクタを使って要素を 1 つ取得するメソッドです。</p>
+    <div class="example">
+      <h1 id="title">こんにちは</h1>
+      <button onclick="changeTitle()">タイトルを変更</button>
+    </div>
+    <script>
+      function changeTitle() {
+        const title = document.querySelector("#title");
+        title.textContent = "ようこそ！";
+      }
+    </script>
+  </section>
+
+  <!-- document.querySelector (3) -->
+  <section>
+    <h2>要素の選択: document.querySelector (3)</h2>
+    <p>セレクタに一致する要素がない場合、<code>null</code> という値が返されます。</p>
+    <div class="example">
+      <button onclick="checkNull()">nullチェック</button>
+      <p id="null-result"></p>
+    </div>
+    <script>
+      function checkNull() {
+        const notFound = document.querySelector("#not-exist");
+        const result = document.getElementById("null-result");
+        result.textContent = "notFound = " + notFound;
+      }
+    </script>
+  </section>
+
+  <!-- document.querySelectorAll (1) -->
+  <section>
+    <h2>要素の選択: document.querySelectorAll (1)</h2>
+    <p><code>document.querySelectorAll()</code> は、セレクタに一致するすべての要素を取得します。</p>
+    <div class="example">
+      <ul>
+        <li class="item">りんご</li>
+        <li class="item">みかん</li>
+        <li class="item">バナナ</li>
+      </ul>
+      <button onclick="countItems()">項目数を表示</button>
+      <p id="item-count"></p>
+    </div>
+    <script>
+      function countItems() {
+        const items = document.querySelectorAll(".item");
+        document.getElementById("item-count").textContent = "項目数: " + items.length;
+      }
+    </script>
+  </section>
+
+  <!-- document.querySelectorAll (2) -->
+  <section>
+    <h2>要素の選択: document.querySelectorAll (2)</h2>
+    <p><code>querySelectorAll()</code> で取得した要素は、<code>for...of</code> を使って一つ一つの要素に対する処理を行うことができます。</p>
+    <div class="example">
+      <ul>
+        <li class="item2">りんご</li>
+        <li class="item2">みかん</li>
+        <li class="item2">バナナ</li>
+      </ul>
+      <button onclick="displayItems()">すべての項目を表示</button>
+      <p id="items-display"></p>
+    </div>
+    <script>
+      function displayItems() {
+        const items = document.querySelectorAll(".item2");
+        const display = document.getElementById("items-display");
+        let result = "";
+        for (const item of items) {
+          result += item.textContent + "<br>";
+        }
+        display.innerHTML = result;
+      }
+    </script>
+  </section>
+
+  <!-- 要素の追加: document.createElement(), appendChild() (1) -->
+  <section>
+    <h2>(参考) 要素の追加: document.createElement(), appendChild() (1)</h2>
+    <p>JavaScript で新しい HTML 要素を作成し、ページに追加できます。</p>
+    <div class="example">
+      <button onclick="addParagraph()">新しい段落を追加</button>
+    </div>
+    <script>
+      function addParagraph() {
+        const newParagraph = document.createElement("p");
+        newParagraph.textContent = "これは新しい段落です";
+        document.body.appendChild(newParagraph);
+      }
+    </script>
+  </section>
+
+  <!-- 要素の追加: document.createElement(), appendChild() (2) -->
+  <section>
+    <h2>(参考) 要素の追加: document.createElement(), appendChild() (2)</h2>
+    <p>特定の要素の中に追加することもできます。</p>
+    <div class="example">
+      <div id="container"></div>
+      <button onclick="addButton()">ボタンを追加</button>
+    </div>
+    <script>
+      function addButton() {
+        const container = document.querySelector("#container");
+        const button = document.createElement("button");
+        button.textContent = "クリック";
+        container.appendChild(button);
+      }
+    </script>
+  </section>
+
+  <!-- スタイルの操作: element.style -->
+  <section>
+    <h2>(参考) スタイルの操作: element.style</h2>
+    <p>JavaScript から要素のスタイルを直接変更できます。</p>
+    <div class="example">
+      <div id="box">このボックスのスタイルを変更します</div>
+      <button onclick="changeStyle()">スタイルを変更</button>
+    </div>
+    <script>
+      function changeStyle() {
+        const box = document.querySelector("#box");
+        box.style.backgroundColor = "blue";
+        box.style.color = "white";
+        box.style.padding = "20px";
+      }
+    </script>
+  </section>
+
+  <!-- 属性の操作: setAttribute() -->
+  <section>
+    <h2>(参考) 属性の操作: setAttribute()</h2>
+    <p>要素の属性（id, class, src など）を JavaScript で変更できます。</p>
+    <div class="example">
+      <img id="demo-image" src="https://via.placeholder.com/150" alt="サンプル画像">
+      <br>
+      <button onclick="changeImage()">画像を変更</button>
+    </div>
+    <script>
+      function changeImage() {
+        const image = document.querySelector("#demo-image");
+        image.setAttribute("src", "https://via.placeholder.com/200");
+        image.setAttribute("alt", "新しい画像");
+        image.setAttribute("class", "thumbnail");
+      }
+    </script>
+  </section>
+
+  <!-- 要素に対するイベントを取得する -->
+  <section>
+    <h2>要素に対するイベントを取得する</h2>
+    <p><code>addEventListener()</code> を使って、イベントが発生したときに実行する処理を登録し、ユーザーの操作に反応する処理が記述できます。</p>
+    <div class="example">
+      <button id="event-button">クリックしてください</button>
+      <p id="event-message"></p>
+    </div>
+    <script>
+      const button = document.querySelector("#event-button");
+      function handleClick() {
+        document.getElementById("event-message").textContent = "ボタンがクリックされました";
+      }
+      button.addEventListener("click", handleClick);
+    </script>
+  </section>
+
+  <!-- 複数のイベントを割り当てる -->
+  <section>
+    <h2>(参考) 複数のイベントを割り当てる</h2>
+    <p>同じ要素に対して、複数のイベントリスナーを登録できます。</p>
+    <div class="example">
+      <button id="multi-button">クリックしてください</button>
+      <p id="multi-message"></p>
+    </div>
+    <script>
+      const multiButton = document.querySelector("#multi-button");
+      function handleClick1() {
+        const msg = document.getElementById("multi-message");
+        msg.textContent = (msg.textContent || "") + "処理1: ログを出力<br>";
+      }
+      function handleClick2() {
+        const msg = document.getElementById("multi-message");
+        msg.innerHTML = (msg.innerHTML || "") + "処理2: 別のログを出力<br>";
+      }
+      multiButton.addEventListener("click", handleClick1);
+      multiButton.addEventListener("click", handleClick2);
+    </script>
+  </section>
+
+  <!-- イベントオブジェクト (1) -->
+  <section>
+    <h2>イベントオブジェクト (1)</h2>
+    <p>イベントが発生すると、<strong>イベントオブジェクト</strong>が自動的に関数に渡されます。</p>
+    <div class="example">
+      <button id="event-obj-button">クリックしてください</button>
+      <p id="event-obj-message"></p>
+    </div>
+    <script>
+      const eventObjButton = document.querySelector("#event-obj-button");
+      function handleClick(event) {
+        const msg = document.getElementById("event-obj-message");
+        msg.innerHTML = "イベントオブジェクト: " + JSON.stringify({
+          type: event.type,
+          target: event.target.tagName
+        }, null, 2);
+      }
+      eventObjButton.addEventListener("click", handleClick);
+    </script>
+  </section>
+
+  <!-- イベントオブジェクト (3) -->
+  <section>
+    <h2>イベントオブジェクト (3)</h2>
+    <p><code>event.target</code> を使って、クリックされた要素を取得できます。</p>
+    <div class="example">
+      <div id="container-click">
+        <button>ボタン1</button>
+        <button>ボタン2</button>
+        <button>ボタン3</button>
+      </div>
+      <p id="target-message"></p>
+    </div>
+    <script>
+      const containerClick = document.querySelector("#container-click");
+      function handleContainerClick(event) {
+        const msg = document.getElementById("target-message");
+        msg.innerHTML = "クリックされた要素: " + event.target.textContent + "<br>";
+        event.target.style.backgroundColor = "yellow";
+      }
+      containerClick.addEventListener("click", handleContainerClick);
+    </script>
+  </section>
+
+  <!-- 既定の動作の抑制 -->
+  <section>
+    <h2>既定の動作の抑制</h2>
+    <p>一部の要素は、ユーザーの入力に対して既定の動作（デフォルトの動作）を持っています。イベントオブジェクトの <code>.preventDefault()</code> というメソッドを使うことで、この動作をキャンセルすることができます。</p>
+    <div class="example">
+      <a id="prevent-link" href="https://www.example.com">外部サイトへ移動（確認あり）</a>
+      <p id="prevent-message"></p>
+    </div>
+    <script>
+      const link = document.querySelector("#prevent-link");
+      link.addEventListener('click', (e) => {
+        if (!confirm('外部サイトへ移動します。よろしいですか？')) {
+          e.preventDefault();
+          document.getElementById("prevent-message").textContent = "キャンセルされました";
+        } else {
+          document.getElementById("prevent-message").textContent = "移動します...";
+        }
+      });
+    </script>
+  </section>
+
+  <!-- イベントのバブリング (1) -->
+  <section>
+    <h2>イベントのバブリング (1)</h2>
+    <p>HTML 要素は入れ子になっていることが多いです。</p>
+    <div class="example">
+      <div id="outer">
+        <div id="inner">
+          <button>クリック</button>
+        </div>
+      </div>
+      <p id="bubbling-message"></p>
+    </div>
+    <script>
+      const outer = document.querySelector("#outer");
+      function handleOuterClick(event) {
+        const msg = document.getElementById("bubbling-message");
+        msg.innerHTML = "outer がクリックされた<br>";
+        msg.innerHTML += "実際にクリックされた要素: " + event.target.tagName + "<br>";
+        msg.innerHTML += "イベントを登録した要素: " + event.currentTarget.id;
+      }
+      outer.addEventListener("click", handleOuterClick);
+    </script>
+  </section>
+
+  <!-- イベントのバブリング (3) -->
+  <section>
+    <h2>イベントのバブリング (3)</h2>
+    <p>イベントのバブリングを使うことで、子要素のイベントをまとめて検知できる処理を親要素に書くことができます。</p>
+    <div class="example">
+      <ul id="list">
+        <li>項目1</li>
+        <li>項目2</li>
+        <li>項目3</li>
+      </ul>
+      <p id="list-message"></p>
+    </div>
+    <script>
+      const list = document.querySelector("#list");
+      function handleListClick(event) {
+        if (event.target.tagName === "LI") {
+          document.getElementById("list-message").textContent = 
+            "クリックされた項目: " + event.target.textContent;
+          event.target.style.backgroundColor = "#4CAF50";
+          event.target.style.color = "white";
+        }
+      }
+      list.addEventListener("click", handleListClick);
+    </script>
+  </section>
+
+  <!-- (参考) DOM の API を利用した場合と React を利用した場合の例 -->
+  <section>
+    <h2>(参考) DOM の API を利用した場合と React を利用した場合の例</h2>
+    <div class="example">
+      <p>DOM の API を利用した場合:</p>
+      <span id="count">0</span>
+      <button id="btn">増加</button>
+    </div>
+    <script>
+      let count = 0;
+      const countElement = document.getElementById('count');
+      const btn = document.getElementById('btn');
+
+      function handleClick() {
+        count = count + 1;
+        countElement.textContent = count;
+      }
+
+      btn.addEventListener('click', handleClick);
+    </script>
+  </section>
+
+</body>
+</html>

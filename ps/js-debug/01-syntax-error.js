@@ -1,5 +1,5 @@
-// 例: 閉じ括弧が足りない
+// 例: 括弧が足りない
 // このコードには構文エラーがあります
-function sayHello( {
-  console.log("こんにちは");
+function sayHello {
+  return "こんにちは";
 }
