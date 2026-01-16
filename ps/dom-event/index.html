@@ -109,7 +109,7 @@
   <h1>DOMとイベント - 例の集約</h1>
 
   <!-- DOMとは (2) -->
-  <section>
+  <section id="dom-intro">
     <h2>DOMとは (2)</h2>
     <p>以下のような HTML があるとします。</p>
     <div class="example">
@@ -121,7 +121,7 @@
   </section>
 
   <!-- document.querySelector (1) -->
-  <section>
+  <section id="query-selector-1">
     <h2>要素の選択: document.querySelector (1)</h2>
     <p><code>document.querySelector()</code> は、CSS のセレクタを使って要素を 1 つ取得するメソッドです。</p>
     <div class="example">
@@ -137,7 +137,7 @@
   </section>
 
   <!-- document.querySelector (3) -->
-  <section>
+  <section id="query-selector-3">
     <h2>要素の選択: document.querySelector (3)</h2>
     <p>セレクタに一致する要素がない場合、<code>null</code> という値が返されます。</p>
     <div class="example">
@@ -154,7 +154,7 @@
   </section>
 
   <!-- document.querySelectorAll (1) -->
-  <section>
+  <section id="query-selector-all-1">
     <h2>要素の選択: document.querySelectorAll (1)</h2>
     <p><code>document.querySelectorAll()</code> は、セレクタに一致するすべての要素を取得します。</p>
     <div class="example">
@@ -175,7 +175,7 @@
   </section>
 
   <!-- document.querySelectorAll (2) -->
-  <section>
+  <section id="query-selector-all-2">
     <h2>要素の選択: document.querySelectorAll (2)</h2>
     <p><code>querySelectorAll()</code> で取得した要素は、<code>for...of</code> を使って一つ一つの要素に対する処理を行うことができます。</p>
     <div class="example">
@@ -200,7 +200,7 @@
     </script>
   </section>
 
-  <section>
+  <section id="create-element">
     <h2>(参考) 要素の追加: document.createElement(), appendChild()</h2>
     <p>特定の要素の中に追加することもできます。</p>
     <div class="example">
@@ -218,7 +218,7 @@
   </section>
 
   <!-- スタイルの操作: element.style -->
-  <section>
+  <section id="style-manipulation">
     <h2>(参考) スタイルの操作: element.style</h2>
     <p>JavaScript から要素のスタイルを直接変更できます。</p>
     <div class="example">
@@ -236,7 +236,7 @@
   </section>
 
   <!-- 属性の操作: setAttribute() -->
-  <section>
+  <section id="set-attribute">
     <h2>(参考) 属性の操作: setAttribute()</h2>
     <p>要素の属性（id, class, src など）を JavaScript で変更できます。</p>
     <div class="example">
@@ -255,7 +255,7 @@
   </section>
 
   <!-- 要素に対するイベントを取得する -->
-  <section>
+  <section id="event-listener">
     <h2>要素に対するイベントを取得する</h2>
     <p><code>addEventListener()</code> を使って、イベントが発生したときに実行する処理を登録し、ユーザーの操作に反応する処理が記述できます。</p>
     <div class="example">
@@ -272,7 +272,7 @@
   </section>
 
   <!-- 複数のイベントを割り当てる -->
-  <section>
+  <section id="multiple-events">
     <h2>(参考) 複数のイベントを割り当てる</h2>
     <p>同じ要素に対して、複数のイベントリスナーを登録できます。</p>
     <div class="example">
@@ -295,7 +295,7 @@
   </section>
 
   <!-- イベントオブジェクト (1) -->
-  <section>
+  <section id="event-object-1">
     <h2>イベントオブジェクト (1)</h2>
     <p>イベントが発生すると、<strong>イベントオブジェクト</strong>が自動的に関数に渡されます。</p>
     <div class="example">
@@ -316,7 +316,7 @@
   </section>
 
   <!-- イベントオブジェクト (3) -->
-  <section>
+  <section id="event-object-3">
     <h2>イベントオブジェクト (3)</h2>
     <p><code>event.target</code> を使って、クリックされた要素を取得できます。</p>
     <div class="example">
@@ -339,7 +339,7 @@
   </section>
 
   <!-- 既定の動作の抑制 -->
-  <section>
+  <section id="prevent-default">
     <h2>既定の動作の抑制</h2>
     <p>一部の要素は、ユーザーの入力に対して既定の動作（デフォルトの動作）を持っています。イベントオブジェクトの <code>.preventDefault()</code> というメソッドを使うことで、この動作をキャンセルすることができます。</p>
     <div class="example">
@@ -360,7 +360,7 @@
   </section>
 
   <!-- イベントのバブリング (1) -->
-  <section>
+  <section id="bubbling-1">
     <h2>イベントのバブリング (1)</h2>
     <p>HTML 要素は入れ子になっていることが多いです。</p>
     <div class="example">
@@ -384,7 +384,7 @@
   </section>
 
   <!-- イベントのバブリング (3) -->
-  <section>
+  <section id="bubbling-3">
     <h2>イベントのバブリング (3)</h2>
     <p>イベントのバブリングを使うことで、子要素のイベントをまとめて検知できる処理を親要素に書くことができます。</p>
     <div class="example">
@@ -410,7 +410,7 @@
   </section>
 
   <!-- (参考) DOM の API を利用した場合と React を利用した場合の例 -->
-  <section>
+  <section id="dom-api-react">
     <h2>(参考) DOM の API を利用した場合と React を利用した場合の例</h2>
     <div class="example">
       <p>DOM の API を利用した場合:</p>
