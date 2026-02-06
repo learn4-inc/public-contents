@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>z-index のデモ</title>
+  <link rel="stylesheet" href="05-z-index.css">
+</head>
+<body>
+  <h1>z-index のデモ</h1>
+  <p>z-index で重ね順を制御できます。値が大きいほど手前（上）に表示されます。</p>
+  
+  <div class="container">
+    <div class="box back">back（z-index: 1）</div>
+    <div class="box front">front（z-index: 10）</div>
+  </div>
+  
+  <p class="note">※ front要素のz-indexが大きいため、手前に表示されています。</p>
+</body>
+</html>

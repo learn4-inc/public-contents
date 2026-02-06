@@ -1,0 +1,48 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+h1 {
+  color: #333;
+}
+
+.note {
+  color: #666;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.container {
+  background-color: white;
+  padding: 20px;
+  border: 2px solid #333;
+  margin-top: 20px;
+  position: relative;
+  min-height: 200px;
+}
+
+.item {
+  padding: 15px;
+  margin: 10px 0;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+}
+
+.item1 {
+  background-color: #4CAF50;
+}
+
+.popup {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  background-color: #f44336;
+  z-index: 10;
+}
+
+.item3 {
+  background-color: #FF9800;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>position: absolute の包含ブロックのデモ</title>
+  <link rel="stylesheet" href="04-absolute-containing-block.css">
+</head>
+<body>
+  <h1>position: absolute の包含ブロックのデモ</h1>
+  <p>position: absolute の要素は、最も近い position が static 以外の親要素（包含ブロック）を基準に配置されます。</p>
+  
+  <div class="parent">
+    <div class="child">
+      右上に配置（親要素を基準）
+    </div>
+  </div>
+  
+  <div class="parent2">
+    <div class="child2">
+      ページ全体を基準に配置（親要素がstatic）
+    </div>
+  </div>
+  
+  <p class="note">※ 上のchildは親要素（position: relative）を基準に右上に配置されています。<br>
+  ※ 下のchild2は親要素がstaticなので、ページ全体を基準に配置されています。</p>
+</body>
+</html>

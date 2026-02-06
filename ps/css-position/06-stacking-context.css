@@ -1,0 +1,47 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+h1 {
+  color: #333;
+}
+
+.note {
+  color: #666;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.parent {
+  position: relative;
+  z-index: 1;  /* => 親要素のコンテキストを作る */
+  background-color: white;
+  padding: 40px;
+  border: 2px solid #333;
+  margin: 20px 0;
+  min-height: 150px;
+}
+
+.child {
+  position: absolute;
+  z-index: 999;  /* => 親要素のコンテキスト内でのみ有効 */
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  top: 20px;
+  left: 20px;
+}
+
+.other {
+  position: absolute;
+  z-index: 5;
+  background-color: #f44336;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  top: 225px;
+  left: 100px;
+}

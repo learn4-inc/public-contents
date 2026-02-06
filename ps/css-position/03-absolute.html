@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>position: absolute のデモ</title>
+  <link rel="stylesheet" href="03-absolute.css">
+</head>
+<body>
+  <h1>position: absolute のデモ</h1>
+  <p>position: absolute は、要素の元の位置を考慮せず、指定した位置に配置します。元の要素のあったスペースはなくなり、他の要素によって詰められます。</p>
+  
+  <div class="container">
+    <div class="item item1">Item 1</div>
+    <div class="item item2 popup">Popup（absolute: top: 50px, left: 100px）</div>
+    <div class="item item3">Item 3</div>
+  </div>
+  
+  <p class="note">※ Popup要素が絶対位置で配置され、元の位置のスペースがなくなり、Item 3が詰められています。</p>
+</body>
+</html>

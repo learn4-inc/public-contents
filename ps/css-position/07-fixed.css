@@ -1,0 +1,45 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+/* 画面上部に固定されるヘッダー */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 100;  /* 他の要素より手前に */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #333;
+}
+
+/* ヘッダーの高さ分、コンテンツの位置を下げる */
+main {
+  margin-top: 60px;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+.content {
+  background-color: white;
+  padding: 20px;
+  border: 2px solid #333;
+  margin-top: 20px;
+}
+
+.content p {
+  margin: 20px 0;
+  line-height: 1.6;
+}

@@ -1,0 +1,49 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+h1 {
+  color: #333;
+}
+
+.note {
+  color: #666;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.container {
+  position: relative;
+  background-color: white;
+  padding: 40px;
+  border: 2px solid #333;
+  margin-top: 20px;
+  min-height: 200px;
+}
+
+.box {
+  position: absolute;
+  padding: 20px;
+  color: white;
+  border-radius: 5px;
+  width: 200px;
+  text-align: center;
+}
+
+.back {
+  position: absolute;
+  z-index: 1;
+  background-color: #4CAF50;
+  top: 50px;
+  left: 50px;
+}
+
+.front {
+  position: absolute;
+  z-index: 10;  /* こちらが手前に表示される */
+  background-color: #f44336;
+  top: 100px;
+  left: 80px;
+}

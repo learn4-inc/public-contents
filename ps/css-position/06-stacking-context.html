@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>重ね合わせコンテキストのデモ</title>
+  <link rel="stylesheet" href="06-stacking-context.css">
+</head>
+<body>
+  <h1>重ね合わせコンテキストのデモ</h1>
+  <p>親要素が新しいコンテキストを作ると、その子要素のz-indexは親要素のコンテキスト内でのみ有効になります。</p>
+  
+  <div class="parent">
+    <div class="child">child（z-index: 999）</div>
+  </div>
+  
+  <div class="other">other（z-index: 5）</div>
+  
+  <p class="note">※ childのz-index: 999は、parentのコンテキスト内でのみ有効のため、parentより大きいz-indexを持つotherの方が上に表示されています。</p>
+</body>
+</html>
