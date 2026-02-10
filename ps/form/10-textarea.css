@@ -1,0 +1,34 @@
+body {
+  padding: 1rem;
+  font-family: sans-serif;
+}
+
+.section-title {
+  margin-top: 2rem;
+}
+
+.section-label {
+  margin-top: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+textarea {
+  display: block;
+  margin-bottom: 1rem;
+  min-width: 20rem;
+  min-height: 5rem;
+}
+
+input {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+button {
+  display: block;
+  margin-top: 0.5rem;
+}

@@ -1,0 +1,18 @@
+body {
+  padding: 1rem;
+  font-family: sans-serif;
+}
+
+.section-label {
+  margin-top: 2rem;
+}
+
+input {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+button {
+  display: block;
+  margin-top: 0.5rem;
+}

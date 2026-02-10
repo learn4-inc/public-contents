@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input type="checkbox" のデモ</title>
+  <link rel="stylesheet" href="05-checkbox.css">
+</head>
+<body>
+  <h1>input type="checkbox"</h1>
+  <p>チェックボックス。同じ name で複数選択でき、送信時は選ばれた value がすべて送られます。</p>
+  <form action="#" method="get">
+    <label><input type="checkbox" name="hobby" value="sports" /> スポーツ</label>
+    <label><input type="checkbox" name="hobby" value="music" /> 音楽</label>
+    <label><input type="checkbox" name="hobby" value="reading" /> 読書</label>
+    <button type="submit">送信</button>
+  </form>
+</body>
+</html>

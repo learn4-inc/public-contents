@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>placeholder と value のデモ</title>
+  <link rel="stylesheet" href="08-placeholder.css">
+</head>
+<body>
+  <h1>placeholder と value</h1>
+  <p>placeholder: ヒント表示。入力すると消える。送信時は空なら送信されない。</p>
+  <form action="#" method="get">
+    <input type="email" name="email" placeholder="例: you@example.com" />
+    <button type="submit">送信</button>
+  </form>
+
+  <p class="section-label">value: 初期値。そのまま送信される。ユーザーが編集できる。</p>
+  <form action="#" method="get">
+    <input type="email" name="email" value="you@example.com" />
+    <button type="submit">送信</button>
+  </form>
+</body>
+</html>

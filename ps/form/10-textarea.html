@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>textarea のデモ</title>
+  <link rel="stylesheet" href="10-textarea.css">
+</head>
+<body>
+  <h1>textarea 要素</h1>
+  <p>複数行のテキストを入力できる欄です。</p>
+  <form action="#" method="get">
+    <label for="message">お問い合わせ内容:</label>
+    <textarea id="message" name="message"></textarea>
+    <button type="submit">送信</button>
+  </form>
+
+  <h2 class="section-title">初期値の指定方法</h2>
+  <p>input の既定値: value 属性で指定</p>
+  <form action="#" method="get">
+    <input type="text" name="text-default" value="初期値テキスト" />
+    <button type="submit">送信</button>
+  </form>
+
+  <p class="section-label">textarea の既定値: 開始タグと終了タグの間に記載</p>
+  <form action="#" method="get">
+    <textarea name="textarea-default">ここに初期値テキストを書きます</textarea>
+    <button type="submit">送信</button>
+  </form>
+</body>
+</html>
