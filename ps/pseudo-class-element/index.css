@@ -1,0 +1,36 @@
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  color: #333;
+}
+
+h1 {
+  font-size: 1.35rem;
+  margin: 0 0 0.5em;
+}
+
+p {
+  margin: 0 0 1.5rem;
+  color: #555;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,17 @@
+.note::before {
+  content: "📌 ";
+}
+
+.note::after {
+  content: "！";
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.note {
+  margin: 0;
+  padding: 0.75rem;
+  background: #fffbe6;
+  border-left: 4px solid #f0d000;
+  border-radius: 0 4px 4px 0;
+}

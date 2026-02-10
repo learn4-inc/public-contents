@@ -1,0 +1,5 @@
+.drop-cap::first-letter {
+  font-size: 2em;
+  font-weight: bold;
+  color: #8e44ad;
+}
